@@ -89,7 +89,7 @@ class MenuSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Menu
-        fields = ['menu_id', 'nama_menu', 'deskripsi', 'harga', 'stok', 'kategori', 'kategori_id']
+        fields = '__all__'
 
 
 class MejaSerializer(serializers.ModelSerializer):

@@ -41,6 +41,8 @@ class Menu(models.Model):
     harga = models.DecimalField(max_digits=10, decimal_places=0)
     kategori = models.ForeignKey(KategoriMenu, on_delete=models.CASCADE, db_column='kategori_id')
     stok = models.IntegerField()
+    foto =  models.ImageField(upload_to="assets/", null=True, blank=True)
+
 
     class Meta:
         db_table = 'menu'

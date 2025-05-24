@@ -4,6 +4,7 @@ from .views import *
 
 router = DefaultRouter()
 router.register(r'login', LoginViewSet, basename='login')
+router.register(r'register', RegisterViewSet, basename='register')
 router.register(r'users', CustomUserViewSet)
 router.register(r'roles', RoleViewSet)
 router.register(r'kategori-menu', KategoriMenuViewSet)

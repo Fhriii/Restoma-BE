@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-f#49ra(iszy*ffc#p-uzfp11u!urn-e4eei@n)#ru!)8+a8nq#
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+MEDIA_URL ='/'
+MEDIA_ROOT = BASE_DIR
 
 # Application definition
 
@@ -44,8 +45,18 @@ INSTALLED_APPS = [
     'drf_yasg',
 ]
 
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://localhost:54475",
+    "http://10.0.2.2:8000",
+     "http://127.0.0.1:8000",   
+     "http://192.168.118.247:8000",   
+]
+
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -54,6 +65,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 AUTH_USER_MODEL = 'restoApp.CustomUser'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
